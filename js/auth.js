@@ -38,14 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
           /* VALID CREDENTIALS */
           const validCredentials = {
               // Student account
-              'marcosjaiper@asiasourceicollege.edu.ph': {
-                  password: '123456',
+              'Student@asic.edu.ph': {
+                  password: 'studentasic11',
                   accountType: 'student',
                   redirect: 'dashboard.html'
               },
               // Teacher account
-              'maamella@gmail.com': {
-                  password: '123456',
+              'Teacher@gmail.com': {
+                  password: 'teacherasic12',
                   accountType: 'teacher',
                   redirect: 'teacher-dashboard.html'
               }
@@ -83,4 +83,5 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.removeItem('accountType');
       localStorage.removeItem('userEmail');
   }
+
 });
