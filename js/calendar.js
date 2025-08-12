@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize calendar with May 2025 as default view
-    let currentDate = new Date(2025, 4, 1); // May 2025 (month is 0-indexed)
+    // Initialize calendar with Sept 2025 as default view
+    let currentDate = new Date(2025, 9, 11); // Sept 2025 (month is 0-indexed)
     const calendarGrid = document.getElementById('calendarGrid');
     const currentMonthElement = document.getElementById('currentMonth');
     const prevMonthBtn = document.getElementById('prevMonth');
     const nextMonthBtn = document.getElementById('nextMonth');
     const todayBtn = document.getElementById('today');
   
-    // Assignment data for May 2025
-    const may2025Assignments = {
+    // Assignment data for Sept 2025
+    const sept2025Assignments = {
       5: { title: 'P.E Assignment', type: 'physical' },
       10: { title: 'Programming Assignment', type: 'tech' },
       15: { title: 'Filipino Assignment', type: 'language' },
@@ -69,16 +69,16 @@ document.addEventListener('DOMContentLoaded', function() {
         dateElement.textContent = day;
         dayElement.appendChild(dateElement);
         
-        // Add assignments for May 2025
+        // Add assignments for sept 2025
         if (currentDate.getMonth() === 4 && currentDate.getFullYear() === 2025) {
-          if (may2025Assignments[day]) {
-            const event = may2025Assignments[day];
+          if (sept2025Assignments[day]) {
+            const event = sept2025Assignments[day];
             const eventElement = document.createElement('div');
             eventElement.className = `calendar-event ${event.type}`;
             eventElement.textContent = event.title;
             
             // Add tooltip on hover
-            eventElement.title = `Due: May ${day}, 2025`;
+            eventElement.title = `Due: sept ${day}, 2025`;
             dayElement.appendChild(eventElement);
           }
         }
@@ -109,7 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Click handler for calendar days
     calendarGrid.addEventListener('click', function(e) {
       if (e.target.classList.contains('calendar-event')) {
-        alert(`Assignment: ${e.target.textContent}\nDue: May ${e.target.parentElement.querySelector('.calendar-date').textContent}, 2025`);
+        alert(`Assignment: ${e.target.textContent}\nDue: sept ${e.target.parentElement.querySelector('.calendar-date').textContent}, 2025`);
       }
     });
+
   });
