@@ -1,0 +1,56 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Login Page Styles */
+  .login-container {
+    background-color: #3c0d0d;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+  
+  .title-asic, .title-taskhub {
+    color: #fbc108;
+  }
+  
+  /* Dashboard Styles */
+  .dashboard-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #3c0d0d;
+    color: white;
+    padding: 25px;
+    position: relative;
+  }
+  
+  .content-area {
+    flex: 1;
+    padding: 30px;
+  }
+  
+  /* Add all other styles from previous implementations */

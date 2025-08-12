@@ -1,0 +1,133 @@
+/* Main Container */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #3c0d0d;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-container {
+    background-color: #3c0d0d;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border: 1px solid #5a1a1a;
+  }
+  
+  /* Header Styles */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 20px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .logo {
+    height: 80px;
+    width: auto;
+  }
+  
+  .title-asic, .title-taskhub {
+    color: #fbc108;
+  }
+  
+  /* Form Elements */
+  label {
+    display: block;
+    text-align: left;
+    margin: 15px 0 5px;
+    font-size: 14px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 14px;
+  }
+  
+  .checkbox-container input {
+    margin-right: 8px;
+  }
+  
+  /* Buttons & Links */
+  .login-button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    background-color: #fbc108;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #e0a800;
+  }
+  
+  .links {
+    margin-top: 30px;
+    font-size: 14px;
+  }
+  
+  .links a {
+    color: #fbc108;
+    text-decoration: underline;
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .links a:hover {
+    text-decoration: none;
+  }
+
+ /* Error and Attempt Styles */
+ .error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin: 10px 0;
+  text-align: center;
+  display: none;
+  padding: 8px;
+  background: #fde8e8;
+  border-radius: 4px;
+}
+
+.attempt-counter {
+  color: #6c757d;
+  font-size: 13px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.disabled-form {
+  opacity: 0.7;
+  pointer-events: none;
+}
