@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In | TaskHub</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="header">
+      <h1 class="title-asic">ASiC</h1>
+      <img src="Images/ASiC Logo.png" alt="ASiC Logo" class="logo">
+      <h1 class="title-taskhub">TaskHub</h1>
+    </div>
+
+    <form id="loginForm">
+      <label for="email">ASiC Email:</label>
+      <input type="text" id="email" name="email" required placeholder="Enter institute email">
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required placeholder="Enter password">
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="showPassword">
+        <label for="showPassword">Show Password</label>
+      </div>
+
+      <div id="errorMessage" class="error-message"></div>
+
+      <button type="submit" class="login-button">Sign In</button>
+
+      <div class="links">
+        <a href="#">Visit Asia Source iCollege</a>
+        <a href="#">Need Help?</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Clear any existing login data when loading login page
+    if (window.location.pathname.includes('login.html')) {
+      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem('accountType');
+      localStorage.removeItem('userEmail');
+    }
+  </script>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

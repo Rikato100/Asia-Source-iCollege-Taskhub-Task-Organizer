@@ -1,0 +1,241 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Classes | TaskHub</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional Styles for New Layout */
+        .grade-level {
+        margin-bottom: 15px;
+        }
+        
+        .grade-header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s;
+        }
+        
+        .grade-header:hover {
+        background-color: #eee;
+        }
+        
+        .grade-header i {
+  transform: rotate(90deg); /* Point down when expanded */
+  transition: transform 0.3s ease;
+}
+        
+        .grade-header.collapsed i {
+  transform: rotate(0deg); /* Point right when collapsed */
+}
+        
+.strand-list {
+  display: none; /* Hidden by default */
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  padding: 10px;
+  margin-top: 5px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+        
+        .strand-item {
+        padding: 8px;
+        background: white;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .upload-fab {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: #3c0d0d;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        cursor: pointer;
+        z-index: 100;
+        }
+        
+        .upload-fab:hover {
+        background: #4a1515;
+        transform: scale(1.1);
+        }
+        
+        /* Hide upload section by default */
+        #uploadSection {
+        display: none;
+        }
+    </style>
+    </head>
+    <body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+        <div class="logo-area">
+            <img src="Images/ASiC Logo.png" alt="ASiC Logo" class="logo">
+            <h2>ASIA SOURCE ICOLLEGE</h2>
+            <h1>TaskHub</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+            <li class="active"><a href="teacher-classes.html"><i class="fas fa-chalkboard-teacher"></i> My Classes</a></li>
+            <li><a href="teacher-settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+        </aside>
+
+        <main class="content-area">
+        <div class="classes-container">
+            <h2>My Classes</h2>
+            
+            <!-- Grade Level Sections -->
+            <div class="grade-level">
+                <div class="grade-header collapsed" onclick="toggleGrade('12')">
+                  <i class="fas fa-chevron-right"></i>
+                  <h3>Grade 12</h3>
+                </div>
+                <div class="strand-list" id="grade12-strands" style="display:none">
+                  <div class="strand-item">CP</div>
+                  <div class="strand-item">HUMSS</div>
+                <div class="strand-item">GAS</div>
+                <div class="strand-item">STEM</div>
+                <div class="strand-item">HO</div>
+                <div class="strand-item">ABM</div>
+			
+            </div>
+            </div>
+            
+            <div class="grade-level">
+                <div class="grade-header collapsed" onclick="toggleGrade('11')">
+                <i class="fas fa-chevron-right"></i>
+                <h3>Grade 11</h3>
+                </div>
+                <div class="strand-list" id="grade11-strands" style="display:none">
+                <div class="strand-item">CP</div>
+                <div class="strand-item">HUMSS</div>
+                <div class="strand-item">GAS</div>
+                <div class="strand-item">STEM</div>
+                <div class="strand-item">HO</div>
+                <div class="strand-item">ABM</div>
+            </div>
+            </div>
+            
+            <!-- Upload Section (Hidden by default) -->
+            <div id="uploadSection" class="upload-section">
+            <h3>Upload New Material</h3>
+            <form id="uploadForm">
+                <div class="form-group">
+                <label>For Grade:</label>
+                <select id="gradeSelect" required>
+                    <option value="">-- Select Grade --</option>
+                    <option value="11">Grade 11</option>
+                    <option value="12">Grade 12</option>
+                </select>
+                </div>
+
+                <div class="form-group">
+                <label>Select Strand(s):</label>
+                <div id="strandContainer" class="strand-checkboxes"></div>
+                </div>
+
+                <div class="form-group">
+                <input type="text" id="materialTitle" placeholder="Material Title" required>
+                </div>
+                <div class="form-group">
+                <textarea id="materialDesc" placeholder="Description (optional)"></textarea>
+                </div>
+                <div class="form-group">
+                <label class="file-upload-label">
+                    <i class="fas fa-paperclip"></i> Attach File
+                    <input type="file" id="fileUpload" required>
+                    <span id="fileName">No file selected</span>
+                </label>
+                </div>
+                <button type="submit" class="upload-button">
+                <i class="fas fa-cloud-upload-alt"></i> Upload
+                </button>
+                <button type="button" class="cancel-button" onclick="hideUploadSection()">
+                Cancel
+                </button>
+            </form>
+            </div>
+        </div>
+        
+        <!-- Floating Action Button -->
+        <div class="upload-fab" onclick="showUploadSection()">
+            <i class="fas fa-plus"></i>
+        </div>
+        </main>
+    </div>
+
+    <script>
+        // Replace your toggleGrade function with this:
+        function toggleGrade(grade) {
+  // 1. Safely find elements
+  const header = document.querySelector(`[onclick="toggleGrade('${grade}')"]`);
+  if (!header) {
+    console.error(`Grade ${grade} header not found`);
+    return;
+  }
+
+  const strandList = document.getElementById(`grade${grade}-strands`);
+  const icon = header.getElementsByTagName('i')[0];
+
+  // 2. Toggle visibility
+  const isHidden = strandList.style.display === 'none';
+  strandList.style.display = isHidden ? 'grid' : 'none';
+  
+  // 3. Update visual states
+  if (icon) {
+    icon.style.transform = isHidden ? 'rotate(90deg)' : 'rotate(0deg)';
+  }
+  header.classList.toggle('collapsed', !isHidden);
+}
+
+    // Remove the initialization toggles from DOMContentLoaded
+    // Just keep the event listeners
+        
+        // Show/hide upload section
+        function showUploadSection() {
+        document.getElementById('uploadSection').style.display = 'block';
+        document.querySelector('.upload-fab').style.display = 'none';
+        }
+        
+        function hideUploadSection() {
+        document.getElementById('uploadSection').style.display = 'none';
+        document.querySelector('.upload-fab').style.display = 'flex';
+        document.getElementById('uploadForm').reset();
+        document.getElementById('fileName').textContent = 'No file selected';
+        }
+        
+        // Initialize with Grade 12 expanded by default
+        document.addEventListener('DOMContentLoaded', function() {
+        toggleGrade('12'); // This will collapse it (toggle)
+        toggleGrade('11'); // Collapse Grade 11 too
+        });
+    </script>
+
+    <script src="js/teacher-classes.js"></script>
+    <script src="js/auth.js"></script>
+    
+    </body>
+    </html>

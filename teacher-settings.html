@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | TaskHub</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="logo-area">
+        <img src="Images/ASiC Logo.png" alt="ASiC Logo" class="logo">
+        <h2>ASIA SOURCE ICOLLEGE</h2>
+        <h1>TaskHub</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="teacher-classes.html"><i class="fas fa-chalkboard-teacher"></i> Classes</a></li>
+          <li class="active"><a href="teacher-settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content-area">
+      <div class="settings-container">
+        <div class="setting-item">
+          <label>Email</label>
+          <input type="email" value="maamella@gmail.com" readonly>
+        </div>
+        <button class="logout-btn" onclick="logout()">Log Out</button>
+      </div>
+    </main>
+  </div>
+  <script>
+    // Add logout functionality to all logout buttons
+    document.querySelectorAll('.logout-btn').forEach(button => {
+      button.addEventListener('click', logout);
+    });
+  </script>
+<script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrolled Classes | TaskHub</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="logo-area">
+        <img src="Images/ASiC Logo.png" alt="ASiC Logo" class="logo">
+        <h2>ASIA SOURCE ICOLLEGE</h2>
+        <h1>TaskHub</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="tasks.html"><i class="fas fa-tasks"></i> Tasks Assigned</a></li>
+          <li><a href="classes.html"><i class="fas fa-book"></i> Enrolled Classes</a></li>
+          <li><a href="calendar.html"><i class="far fa-calendar-alt"></i> Calendar</a></li>
+          <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content-area">
+      <div class="classes-header">
+        <h2>Enrolled Classes</h2>
+        <div class="search-box">
+          <input type="text" placeholder="Type here to search...">
+        </div>
+      </div>
+
+      <div class="main-content-wrapper">
+        <div class="class-list-container">
+          <div class="class-list">
+            <!-- Class Item 1 -->
+            <div class="class-item">
+              <div class="class-info">
+                <h3>Mathematics</h3>
+                <p>Ms. Jhovie</p>
+              </div>
+            </div>
+
+            <!-- Class Item 2 - Updated to Ms. Ella -->
+            <div class="class-item">
+              <div class="class-info">
+                <h3>Science</h3>
+                <p>Ms. Ella</p>
+              </div>
+            </div>
+
+            <!-- Class Item 3 -->
+            <div class="class-item">
+              <div class="class-info">
+                <h3>English</h3>
+                <p>Mr. Charlie</p>
+              </div>
+            </div>
+
+            <!-- Class Item 4 -->
+            <div class="class-item">
+              <div class="class-info">
+                <h3>Computer Programming</h3>
+                <p>Mr. Blancia</p>
+              </div>
+            </div>
+
+            <!-- Class Item 5 -->
+            <div class="class-item">
+              <div class="class-info">
+                <h3>History</h3>
+                <p>Mr. Renzlee</p>
+              </div>
+            </div>
+
+            <!-- Class Item 6 -->
+            <div class="class-item">
+              <div class="class-info">
+                <h3>Physical Education</h3>
+                <p>Mr. Niño</p>
+              </div>
+            </div>
+
+            <!-- Class Item 7 -->
+            <div class="class-item">
+              <div class="class-info">
+                <h3>Filipino</h3>
+                <p>Mrs. Marissa</p>
+              </div>
+            </div>
+
+            <!-- Class Item 8 -->
+            <div class="class-item">
+              <div class="class-info">
+                <h3>Values Education</h3>
+                <p>Mr. Toni</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Task Panel - Now on the right side -->
+        <div id="taskPanel" class="task-panel">
+          <div class="panel-header">
+            <h3 id="selectedClassName">Select a class to view tasks</h3>
+          </div>
+          <div class="empty-state">
+            <p>No class selected</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/classes.js"></script>
+</body>
+</html>

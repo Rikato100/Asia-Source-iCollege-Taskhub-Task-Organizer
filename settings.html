@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | TaskHub</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="logo-area">
+        <img src="Images/ASiC Logo.png" alt="ASiC Logo" class="logo">
+        <h2>ASIA SOURCE ICOLLEGE</h2>
+        <h1>TaskHub</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="tasks.html"><i class="fas fa-tasks"></i> Tasks Assigned</a></li>
+          <li><a href="classes.html"><i class="fas fa-book"></i> Enrolled Classes</a></li>
+          <li><a href="calendar.html"><i class="far fa-calendar-alt"></i> Calendar</a></li>
+          <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content-area">
+      <div class="settings-container">
+        <!-- Profile Section -->
+        <div class="settings-section">
+          <div class="section-header" onclick="toggleSection('profile')">
+            <h3>Profile Settings</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="section-content" id="profile-section">
+            <div class="setting-item">
+              <label>Display Name</label>
+              <input type="text" id="displayName" value="Student Name">
+            </div>
+            <div class="setting-item">
+              <label>ASiC Email</label>
+              <input type="email" id="userEmail" value="student@asic.edu" readonly>
+            </div>
+          </div>
+        </div>
+
+        <!-- Password Section -->
+        <div class="settings-section">
+          <div class="section-header" onclick="toggleSection('password')">
+            <h3>Change Password</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="section-content" id="password-section">
+            <div class="setting-item">
+              <label>Current Password</label>
+              <input type="password" id="currentPassword">
+            </div>
+            <div class="setting-item">
+              <label>New Password</label>
+              <input type="password" id="newPassword">
+            </div>
+            <div class="setting-item">
+              <label>Confirm New Password</label>
+              <input type="password" id="confirmPassword">
+            </div>
+            <button id="changePasswordBtn" class="settings-btn">Update Password</button>
+          </div>
+        </div>
+
+        <!-- Preferences Section -->
+        <div class="settings-section">
+          <div class="section-header" onclick="toggleSection('preferences')">
+            <h3>Preferences</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="section-content" id="preferences-section">
+            <div class="setting-item toggle">
+              <label>Dark Mode</label>
+              <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="setting-item">
+              <label>Language</label>
+              <select id="languageSelect">
+                <option>English</option>
+                <option>Filipino</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logout Button -->
+        <button class="logout-btn" onclick="logout()">Log Out</button>
+      </div>
+    </main>
+  </div>
+  <script src="js/dashboard.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>
